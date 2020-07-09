@@ -24,7 +24,6 @@ handleSubmit = e => {
 
 handleChange = e => {
     const { value, name } = e.target;
-    console.log(value, name)
 
     this.setState({ [name]:value })
 }
@@ -32,7 +31,7 @@ handleChange = e => {
 render() { 
     return ( 
         <div className='sign-in'>
-            <h2>
+            <h2 className='title'>
                 I already have account
             </h2>
             <span>
