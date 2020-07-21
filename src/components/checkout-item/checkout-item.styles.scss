@@ -24,7 +24,19 @@
     }
 
     .quantity {
-        padding-left: 12px;
+        display: flex;
+
+        .increment {
+            cursor: pointer;
+        }
+
+        .decrement {
+            cursor: pointer;
+        }
+
+        .value {
+            margin: 0 10px;
+        }
     }
 
     .remove-button {
