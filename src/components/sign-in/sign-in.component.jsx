@@ -12,7 +12,7 @@ class SignIn extends React.Component {
         super(props)
         this.state = {
             email:'',
-            password:''
+            password:'',
         }
     }
 
@@ -22,12 +22,15 @@ handleSubmit = async e => {
     const { email, password } = this.state
 
     try {
-        await auth.signInWithEmailAndPassword(email, password)
-        this.setState({ email:'', password:'' });
+        if(email==='' || password==='') {
+          alert('All must be fill')
+        }else {
+            await auth.signInWithEmailAndPassword(email, password)
+            this.setState({ email:'', password:'' });
+        }
     } catch (error) {
         console.log(error)
     }
-
 }
 
 handleChange = e => {
