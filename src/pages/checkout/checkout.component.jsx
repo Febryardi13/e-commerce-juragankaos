@@ -7,27 +7,33 @@ import StripeButton from '../../components/stripe-button/stripe-button.component
 
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors'
 
-import './checkout.styles.scss'
+import { 
+    CheckoutContainer,
+    HeaderContainer,
+    HeaderBlockContainer,
+    TotalContainer,
+    TestWarningContainer
+} from './checkout.styles'
 
 const Checkout = ({ cartItems, total }) => (
-    <div className='checkout-page'>
-        <div className='checkout-header'>
-            <div className='heaader-block'>
+    <CheckoutContainer>
+        <HeaderContainer>
+            <HeaderBlockContainer>
                 <span>Product</span>
-            </div>
-            <div className='heaader-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Description</span>
-            </div>
-            <div className='heaader-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Quantity</span>
-            </div>
-            <div className='heaader-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Price</span>
-            </div>
-            <div className='heaader-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Remove</span>
-            </div>
-        </div>
+            </HeaderBlockContainer>
+        </HeaderContainer>
         {
             cartItems.map(cartItem => 
                 (
@@ -35,18 +41,18 @@ const Checkout = ({ cartItems, total }) => (
                 )    
             )
         }
-        <div className='total'>
+        <TotalContainer>
             <span>TOTAL: ${total}</span>
-        </div>
+        </TotalContainer>
         <StripeButton price={total}/>
-        <div className='test-warning'>
+        <TestWarningContainer>
             *Please use the following test credit card for payments*
             <br/>
             <span> 4242 4242 4242 4242 </span>  
             <span>Exp: 07/20 -> current Date: MM/YY</span>
             <span> CVC: 123</span>
-        </div>
-    </div>
+        </TestWarningContainer>
+    </CheckoutContainer>
 )
 
 const mapStateToProps = createStructuredSelector ({
