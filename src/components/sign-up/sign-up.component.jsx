@@ -1,16 +1,17 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component'
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
+import { signUpStart } from '../../redux/user/user.action'
 
 import { 
     SignUpContainer,
     TitleContainer,
     ButtonsContainer
 } from './sign-up.styles'
-// import './sign-up.styles.scss'
 
 
 class SignUp extends React.Component {
@@ -26,28 +27,17 @@ class SignUp extends React.Component {
 
         handleSubmit = async event => {
             event.preventDefault();
-
+            const { signUpStart } = this.props
             const {displayName, email, password, confirmPassword} = this.state
 
-            if(password !== confirmPassword ) {
-                alert('Password not matching with Confirm Password')
-                return;
+            if(password.length <= 7 || confirmPassword.length <= 7) {
+                alert('Password must be 8 character or more')
+                if(password !== confirmPassword ) {
+                    alert('Password not matching with Confirm Password')
+                    return
+                }                
             }
-
-            try {
-                const { user } = await auth.createUserWithEmailAndPassword(email, password)
-
-                await createUserProfileDocument(user, { displayName })
-                this.setState({
-                    displayName: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                })
-
-            } catch (error) {  
-                console.log(error)
-            }
+            signUpStart({ email, password, displayName })
         }
 
         handleChange = event => {
@@ -95,7 +85,7 @@ class SignUp extends React.Component {
                             label='confirm password'
                         />
                         <ButtonsContainer>
-                            <CustomButton type='submit' onClick={this.handleSubmit}> SIGN UP </CustomButton>
+                            <CustomButton type='submit' onClick={signUpStart}> SIGN UP </CustomButton>
                         </ButtonsContainer>
                     </form>
                 </SignUpContainer>       
@@ -104,4 +94,8 @@ class SignUp extends React.Component {
     
 }
 
-export default SignUp
+const mapDispatchToProps = dispatch => ({
+    signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
+}) 
+
+export default connect(null, mapDispatchToProps)(SignUp)
