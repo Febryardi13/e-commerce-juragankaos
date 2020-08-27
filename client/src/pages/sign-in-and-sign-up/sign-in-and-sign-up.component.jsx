@@ -12,4 +12,4 @@ const SignInAndSignUp = () => (
     </SignUpAndSignInContainer>
 )
 
-export default SignInAndSignUp
+export default React.memo(SignInAndSignUp)

@@ -38,4 +38,4 @@ const StripeCheckoutButton = ({ price }) => {
     )
 }
 
-export default StripeCheckoutButton
+export default React.memo(StripeCheckoutButton)

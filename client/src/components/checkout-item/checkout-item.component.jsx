@@ -40,4 +40,4 @@ const mapStateToProps = dispatch => ({
     removeItem: item => dispatch(removeItem(item))
 })
 
-export default connect (null, mapStateToProps) (CheckoutItem)
+export default connect (null, mapStateToProps) (React.memo(CheckoutItem))

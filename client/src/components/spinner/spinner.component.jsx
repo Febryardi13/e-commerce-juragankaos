@@ -8,4 +8,4 @@ const Spinner = () => (
     </SpinnerContainer>
 )
 
-export default Spinner
+export default React.memo(Spinner)

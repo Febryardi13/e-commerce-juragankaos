@@ -10,4 +10,4 @@ const HomePage = () => (
     </HomePageContainer>
 )
 
-export default HomePage
+export default React.memo(HomePage)

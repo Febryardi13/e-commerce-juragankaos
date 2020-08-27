@@ -10,4 +10,4 @@ const WithSpinner = WrappedComponent => ({ isLoading, ...otherProps }) => {
     );
 }
 
-export default WithSpinner;
+export default React.memo(WithSpinner);
