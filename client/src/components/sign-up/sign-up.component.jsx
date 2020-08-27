@@ -92,4 +92,4 @@ const mapDispatchToProps = dispatch => ({
     signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
 }) 
 
-export default connect(null, mapDispatchToProps) (React.memo(SignUp))
+export default connect(null, mapDispatchToProps)(SignUp)

@@ -80,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
     ) 
 })
  
-export default connect (null, mapDispatchToProps) (React.memo(SignIn));
+export default connect (null, mapDispatchToProps)(SignIn);

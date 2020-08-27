@@ -60,4 +60,4 @@ const mapStateToProps = createStructuredSelector ({
     total: selectCartTotal
 })
 
-export default connect(mapStateToProps) (React.memo(Checkout))
+export default connect(mapStateToProps)(Checkout)

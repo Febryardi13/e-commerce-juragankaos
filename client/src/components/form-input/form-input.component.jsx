@@ -26,4 +26,4 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
     </GroupContainer>
 )
 
-export default React.memo(FormInput);
+export default FormInput;

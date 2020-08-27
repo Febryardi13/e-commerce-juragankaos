@@ -29,4 +29,4 @@ const mapStateToProps = createStructuredSelector ({
     itemCount: selectCartItemsCount
 })
 
-export default connect (mapStateToProps, mapDispatchToProps) (React.memo(CartIcon));
+export default connect (mapStateToProps, mapDispatchToProps) (CartIcon);

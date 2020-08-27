@@ -34,4 +34,4 @@ const mapDistpatchToProps = dispatch => ({
     fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 })
 
-export default connect(null,mapDistpatchToProps) (React.memo(ShopPage))
+export default connect(null,mapDistpatchToProps)(ShopPage)

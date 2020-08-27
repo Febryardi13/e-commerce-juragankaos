@@ -6,8 +6,8 @@ import { HomePageContainer } from './homepage.styles'
 
 const HomePage = () => (
     <HomePageContainer>
-        <Directory />
+            <Directory />
     </HomePageContainer>
 )
 
-export default React.memo(HomePage)
+export default HomePage
