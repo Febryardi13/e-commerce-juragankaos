@@ -15,7 +15,7 @@ import {
     TestWarningContainer
 } from './checkout.styles'
 
-const Checkout = ({ cartItems, total }) => (
+export const Checkout = ({ cartItems, total }) => (
     <CheckoutContainer>
         <HeaderContainer>
             <HeaderBlockContainer>

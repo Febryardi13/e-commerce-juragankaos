@@ -35,6 +35,8 @@ export const CollectionItemContainer = styled.div`
     }
 `;
 
+CollectionItemContainer.displayName = 'CollectionItemContainer'
+
 export const AddButton = styled(CustomButton)`
   width: 80%;
   opacity: 0.7;
@@ -50,6 +52,8 @@ export const AddButton = styled(CustomButton)`
   }
 `;
 
+AddButton.displayName = 'AddButton'
+
 export const CollectionImage = styled.div`
     width: 100%;
     height: 95%;
@@ -58,6 +62,8 @@ export const CollectionImage = styled.div`
     margin-bottom: 5px;
     background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
+
+CollectionImage.displayName = 'CollectionImage'
 
 export const CollectionFooter = styled.div`
     width: 100%;
@@ -72,8 +78,12 @@ export const CollectionName = styled.span`
     margin-bottom: 15px;
 `;
 
+CollectionName.displayName = 'CollectionName'
+
 export const CollectionPrice = styled.span`
     width: 10%;
     text-align: right;
 `;
+
+CollectionPrice.displayName = 'CollectionPrice'
 

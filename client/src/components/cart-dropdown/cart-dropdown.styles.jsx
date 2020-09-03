@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import CustomButton from '../custom-button/custom-button.component';
 
 export const CartDropdownContainer = styled.div`
     position: absolute;
@@ -12,11 +13,13 @@ export const CartDropdownContainer = styled.div`
     top: 80px;
     right: 0;
     z-index: 5;
-
-    button {
-        margin-top: auto;
-    }
 `;
+
+export const CartDropdownButton = styled(CustomButton)`
+    margin-top: auto;
+`;
+
+CartDropdownButton.displayName = 'CartDropdownButton'
 
 export const CartItemsContainer = styled.div`
     height: 240px;
@@ -29,3 +32,4 @@ export const EmptyMessageContainer = styled.span`
     font-size: 18px ;
     margin: 50px auto;
 `
+EmptyMessageContainer.displayName = 'EmptyMessageContainer'
